@@ -31,7 +31,9 @@ public class SpaceInvadersBoard {
     if (this.notOver) {
       if (random.nextInt(Constants.ALIEN_SHOOT_EVERY_N_TICKS) == 1) {
         Alien shooter = aliens.get(random.nextInt(aliens.size() - 1));
-        bullets.add(new Bullet(shooter.getX(), shooter.getY(), 1));
+        if (shooter.getStatus()) {
+          bullets.add(new Bullet(shooter.getX(), shooter.getY(), 1));
+        }
       }
       for (Bullet b : bullets) {
         b.onTick();
