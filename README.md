@@ -1,8 +1,8 @@
-# Simple Space Invaders
+# Space Invaders
 
-A simple space invaders game written using the MVC design pattern.
+A simple Space Invaders game written using the MVC design pattern.
 
-![Demo](https://github.com/Plabick/Space-Invaders/blob/master/demo.gif)
+![Demo](https://github.com/Plabick/Space-Invaders/blob/master/other/SpaceInvadersDemo.gif)
 
 ## Usage
 To start the game, run the main method in the `Launcher` class.
