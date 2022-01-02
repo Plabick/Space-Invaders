@@ -2,7 +2,7 @@ package SpaceInvaders.model.piece;
 
 import SpaceInvaders.Constants;
 
-public class Player extends GamePiece {
+public class Player extends AbstractGamePiece {
   public Player() {
     super(
         Constants.GAME_BOARD_WIDTH / 2,

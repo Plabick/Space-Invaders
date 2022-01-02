@@ -2,7 +2,7 @@ package SpaceInvaders.model.piece;
 
 import SpaceInvaders.Constants;
 
-public class Bullet extends GamePiece {
+public class Bullet extends AbstractGamePiece {
   private boolean alive = true;
 
   public Bullet(int x, int y, int direction) {

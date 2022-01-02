@@ -1,13 +1,11 @@
 package SpaceInvaders.model.piece;
 
-import SpaceInvaders.Constants;
-
-public abstract class GamePiece {
+public abstract class AbstractGamePiece {
   protected int x, y;
   protected int direction;
   protected int speed; 
 
-  public GamePiece(int x, int y, int direction) {
+  public AbstractGamePiece(int x, int y, int direction) {
     this.x = x;
     this.y = y;
     this.direction = direction;

@@ -2,7 +2,7 @@ package SpaceInvaders.model.piece;
 
 import SpaceInvaders.Constants;
 
-public class Alien extends GamePiece {
+public class Alien extends AbstractGamePiece {
   private boolean alive;
 
   public Alien(int x, int y, int direction) {
