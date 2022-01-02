@@ -2,8 +2,8 @@ package SpaceInvaders.view;
 
 import SpaceInvaders.Constants;
 import SpaceInvaders.model.SpaceInvadersBoard;
-import SpaceInvaders.model.piece.Alien;
-import SpaceInvaders.model.piece.Bullet;
+import SpaceInvaders.model.pieces.Alien;
+import SpaceInvaders.model.pieces.Bullet;
 
 import javax.swing.*;
 import java.awt.*;

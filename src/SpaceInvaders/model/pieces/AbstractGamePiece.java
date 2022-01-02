@@ -1,4 +1,4 @@
-package SpaceInvaders.model.piece;
+package SpaceInvaders.model.pieces;
 
 public abstract class AbstractGamePiece {
   protected int x, y;

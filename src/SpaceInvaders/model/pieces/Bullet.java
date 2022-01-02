@@ -1,4 +1,4 @@
-package SpaceInvaders.model.piece;
+package SpaceInvaders.model.pieces;
 
 import SpaceInvaders.Constants;
 

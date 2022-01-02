@@ -1,9 +1,9 @@
 package SpaceInvaders.model;
 
 import SpaceInvaders.Constants;
-import SpaceInvaders.model.piece.Alien;
-import SpaceInvaders.model.piece.Bullet;
-import SpaceInvaders.model.piece.Player;
+import SpaceInvaders.model.pieces.Alien;
+import SpaceInvaders.model.pieces.Bullet;
+import SpaceInvaders.model.pieces.Player;
 
 import java.util.ArrayList;
 import java.util.Random;
