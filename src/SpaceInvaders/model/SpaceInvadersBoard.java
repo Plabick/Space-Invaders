@@ -29,36 +29,57 @@ public class SpaceInvadersBoard {
 
   public void onTick() {
     if (this.notOver) {
-      if (random.nextInt(Constants.ALIEN_SHOOT_EVERY_N_TICKS) == 1) {
-        Alien shooter = aliens.get(random.nextInt(aliens.size() - 1));
-        if (shooter.getStatus()) {
-          bullets.add(new Bullet(shooter.getX(), shooter.getY(), 1));
-        }
-      }
+      this.onTickAllAliens();
+      this.onTickAllBullets();
+      this.randomlyShootFromAliens();
+      this.player.onTick();
+
       for (Bullet b : bullets) {
-        b.onTick();
         for (Alien a : aliens) {
-          if (a.collideWithBullet(b)) {
-            a.destroy();
-            b.destroy();
-            this.score++;
-          }
-          if (player.collideWithBullet(b)) {
-            this.notOver = false;
-          }
+          checkForAlienBulletCollisions(a, b);
+          this.notOver &= !player.collideWithBullet(b);
         }
       }
     }
+    this.switchDirectionsIfAliensCollideWithWall();
+  }
+
+  private void randomlyShootFromAliens() {
+    if (random.nextInt(Constants.ALIEN_SHOOT_EVERY_N_TICKS) == 1) {
+      Alien shooter = aliens.get(random.nextInt(aliens.size() - 1));
+      if (shooter.getStatus()) {
+        bullets.add(new Bullet(shooter.getX(), shooter.getY(), 1));
+      }
+    }
+  }
+
+  private void onTickAllAliens() {
+    for (Alien a : aliens) {
+      a.onTick();
+    }
+  }
+
+  private void onTickAllBullets() {
+    for (Bullet b : bullets) {
+      b.onTick();
+    }
+  }
+
+  private void switchDirectionsIfAliensCollideWithWall() {
     if (anyAlienOutsideOfBounds()) {
       for (Alien a : aliens) {
         a.goDownLevel();
         a.toggleDirection();
       }
     }
-    for (Alien a : aliens) {
-      a.onTick();
+  }
+
+  private void checkForAlienBulletCollisions(Alien a, Bullet b) {
+    if (a.collideWithBullet(b)) {
+      a.destroy();
+      b.destroy();
+      this.score++;
     }
-    this.player.onTick();
   }
 
   private void initializeAliens() {
