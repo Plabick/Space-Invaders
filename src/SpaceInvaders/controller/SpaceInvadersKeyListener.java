@@ -30,10 +30,6 @@ public class SpaceInvadersKeyListener implements KeyListener {
       case ' ':
         board.fire();
         break;
-      case 'r':
-        //  board.serve();
-        // todo reset
-        break;
     }
   }
 
